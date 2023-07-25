@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "858564110105-2vpm2dacuoh1a4f66lsgpst279jpfgp9.apps.googleusercontent.com",
+          "client_id": "858564110105-vttavj5fchrh76p4hum8812epeunr1af.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simonhan.expense_tracker",
+            "certificate_hash": "ee417e20a5aabbbdc437b14b521284d29d72ab26"
+          }
+        },
+        {
+          "client_id": "858564110105-ctplrtngmr3p5c6ug03fhhud8lomqfk4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

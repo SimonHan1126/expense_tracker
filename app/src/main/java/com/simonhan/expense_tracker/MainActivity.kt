@@ -3,6 +3,7 @@ package com.simonhan.expense_tracker
 import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -42,6 +43,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("MainActivity", "onCreate is here ")
         setContent {
             Expense_trackerTheme {
                 // A surface container using the 'background' color from the theme
@@ -99,13 +101,21 @@ fun assembleNavigation(
             SignInScreen(
                 state = state,
                 onSignInClick = {
+                    Log.i("MainActivity", "SignInScreen onSignInClick ------ 1111111")
                     lifecycleScope.launch {
-                        val signInIntentSender = googleAuthUIClient.signIn();
-                        launcher.launch(
-                            IntentSenderRequest.Builder(
-                                signInIntentSender ?: return@launch
-                            ).build()
-                        )
+                        Log.i("MainActivity", "SignInScreen onSignInClick ------ 222222")
+                        try {
+                            val signInIntentSender = googleAuthUIClient.signIn();
+                            Log.i("MainActivity", "SignInScreen onSignInClick ------ 333333")
+                            launcher.launch(
+                                IntentSenderRequest.Builder(
+                                    signInIntentSender ?: return@launch
+                                ).build()
+                            )
+                        } catch (e: Exception) {
+                            Log.i("MainActivity", "SignInScreen onSignInClick ------ 44444 ${e.printStackTrace()}")
+                        }
+
                     }
                 }
             )
