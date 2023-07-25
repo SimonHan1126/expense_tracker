@@ -110,7 +110,7 @@ fun assembleNavigation(
                                 ).build()
                             )
                         } catch (e: Exception) {
-                            Log.i("MainActivity", "SignInScreen onSignInClick ------ 44444 ${e.printStackTrace()}")
+                            Log.i("MainActivity", "SignInScreen onSignInClick ------ 111111 ${e.printStackTrace()}")
                         }
 
                     }
