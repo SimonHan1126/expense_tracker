@@ -101,12 +101,9 @@ fun assembleNavigation(
             SignInScreen(
                 state = state,
                 onSignInClick = {
-                    Log.i("MainActivity", "SignInScreen onSignInClick ------ 1111111")
                     lifecycleScope.launch {
-                        Log.i("MainActivity", "SignInScreen onSignInClick ------ 222222")
                         try {
                             val signInIntentSender = googleAuthUIClient.signIn();
-                            Log.i("MainActivity", "SignInScreen onSignInClick ------ 333333")
                             launcher.launch(
                                 IntentSenderRequest.Builder(
                                     signInIntentSender ?: return@launch
